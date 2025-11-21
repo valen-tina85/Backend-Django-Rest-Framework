@@ -20,7 +20,7 @@ class MercadoViewSet(ModelViewSet):
     serializer_class = MercadoSerializer
 
     def perform_destroy(self, instance):
-        if instance.mercado_calificacon.exists():
+        if instance.mercado_calificacion.exists():
             raise ValidationError("No puedes eliminar un mercado que tiene calificaciones asociadas")
         instance.delete()
 
