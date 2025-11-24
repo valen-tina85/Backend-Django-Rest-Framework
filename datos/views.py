@@ -8,11 +8,14 @@ from rest_framework import filters
 from django_filters.rest_framework import DjangoFilterBackend
 from .models import Calificacion, Mercado, Origen
 from .serializers import CalificacionSerializer, MercadoSerializer, OrigenSerializer
+from .pagination import CustomPageNumberPagination
 
 # Create your views here.
 class CalificacionViewSet(ModelViewSet):
-    queryset = Calificacion.objects.all()
+    queryset = Calificacion.objects.all().order_by('id')
     serializer_class = CalificacionSerializer
+
+    pagination_class = CustomPageNumberPagination
 
 # pueden quedar solo lectura GET, por el momento GET, POST 
 class MercadoViewSet(ModelViewSet): 

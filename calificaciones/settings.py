@@ -54,7 +54,7 @@ MIDDLEWARE = [
 ]
 
 CORS_ALLOWED_ORIGINS = [
-    "http://localhost:3001", #Dirección del servidor web
+    "http://localhost:3000", #Dirección del servidor web
 ]
 
 ROOT_URLCONF = 'calificaciones.urls'
