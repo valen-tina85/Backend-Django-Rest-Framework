@@ -17,6 +17,12 @@ class CalificacionViewSet(ModelViewSet):
 
     pagination_class = CustomPageNumberPagination
 
+    #Permitir que si el contenido de la data es una lista, entonces habilita el ingreso de varias calificaciones
+    def get_serializer(self, *args, **kwargs):
+        if kwargs.get('data') and isinstance(kwargs.get('data'), list):
+            kwargs['many'] = True
+        return super().get_serializer(*args, **kwargs)
+
 # pueden quedar solo lectura GET, por el momento GET, POST 
 class MercadoViewSet(ModelViewSet): 
     queryset = Mercado.objects.all()
