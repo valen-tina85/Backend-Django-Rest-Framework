@@ -37,6 +37,7 @@ pip install django==5.2.7
 pip install djangorestframework
 pip install django-cors-headers
 pip install mysqlclient
+pip install django-filter
 ```
 ### Paquetes requeridos
 Paquete | Propósito 
@@ -44,7 +45,8 @@ Paquete | Propósito
 django | Framework web
 djangorestframework | Rest API Framework
 django-cors-headers	| Soporte para Cross-origin
-mysqlclient | Adaptador para MySQL 
+mysqlclient | Adaptador para MySQL
+django-filter | Filtro de búsqueda
 
 Para más información, revisar el archivo "settings.py" del proyecto.
 
@@ -109,6 +111,17 @@ Para iniciar el servidor de desarrollo de Django:
 python manage.py runserver
 ```
 
+## API Endpoints
+La API de las Calificaciones se exponen a través de la clase `OrigenViewSet`, que amplía `ModelViewSet` de Django REST Framework. Esto proporciona un conjunto completo de operaciones CRUD a través de métodos HTTP RESTful en la URL base /datos/origenes/.
+
+Operación | Método HTTP | Endpoint | Propósito
+:------- | :------- | :------- | :-------
+Listar | GET | /datos/calificaciones/ | Obtiene todas las calificaciones
+Crear | POST | /datos/calificaciones/ | Crea una nueva calificación
+Obtener | GET | /datos/calificaciones/{id}/ | Obtiene una calificación por ID
+Actualizar | PUT | /datos/calificaciones/{id}/ | Actualización total de una calificación
+Actualización parcial | PATCH | /datos/calificaciones/{id}/ | Actualización parcial de una calificación
+Eliminar | DELETE | /datos/calificaciones/{id}/ | Elimina una calificación
 
 
 
