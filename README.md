@@ -111,6 +111,17 @@ Para iniciar el servidor de desarrollo de Django:
 python manage.py runserver
 ```
 
+## API Endpoints
+La API de las Calificaciones se exponen a través de la clase `OrigenViewSet`, que amplía `ModelViewSet` de Django REST Framework. Esto proporciona un conjunto completo de operaciones CRUD a través de métodos HTTP RESTful en la URL base /datos/origenes/.
+
+Método HTTP | Endpoint | Acción ViewSet | Propósito
+:------- | :------- | :------- | :-------
+GET | /datos/origenes/ | list() | Obtiene todas las calificaciones
+POST | /datos/origenes/ | create() | Crea una nueva calificación
+GET | /datos/origenes/{id}/ | retrieve() | Obtiene una calificación por ID
+PUT | /datos/origenes/{id}/ | update() | Actualización total de una calificación
+PATCH | /datos/origenes/{id}/ | partial_update() | Actualización parcial de una calificación
+DELETE | /datos/origenes/{id}/ | destroy() | Elimina una calificación
 
 
 
