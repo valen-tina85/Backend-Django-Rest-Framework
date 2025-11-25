@@ -116,12 +116,12 @@ La API de las Calificaciones se exponen a través de la clase `OrigenViewSet`, q
 
 Método HTTP | Endpoint | Acción ViewSet | Propósito
 :------- | :------- | :------- | :-------
-GET | /datos/origenes/ | list() | Obtiene todas las calificaciones
-POST | /datos/origenes/ | create() | Crea una nueva calificación
-GET | /datos/origenes/{id}/ | retrieve() | Obtiene una calificación por ID
-PUT | /datos/origenes/{id}/ | update() | Actualización total de una calificación
-PATCH | /datos/origenes/{id}/ | partial_update() | Actualización parcial de una calificación
-DELETE | /datos/origenes/{id}/ | destroy() | Elimina una calificación
+GET | /datos/calificaciones/ | list() | Obtiene todas las calificaciones
+POST | /datos/calificaciones/ | create() | Crea una nueva calificación
+GET | /datos/calificaciones/{id}/ | retrieve() | Obtiene una calificación por ID
+PUT | /datos/calificaciones/{id}/ | update() | Actualización total de una calificación
+PATCH | /datos/calificaciones/{id}/ | partial_update() | Actualización parcial de una calificación
+DELETE | /datos/calificaciones/{id}/ | destroy() | Elimina una calificación
 
 
 
