@@ -4,13 +4,24 @@
 
 from rest_framework.exceptions import ValidationError, PermissionDenied
 from rest_framework.viewsets import ModelViewSet
-from rest_framework import filters
+from rest_framework.views import APIView
+from rest_framework.response import Response
+from rest_framework import filters, status
 from django_filters.rest_framework import DjangoFilterBackend
 from .models import Calificacion, Mercado, Origen
-from .serializers import CalificacionSerializer, MercadoSerializer, OrigenSerializer
+from .serializers import CalificacionSerializer, MercadoSerializer, OrigenSerializer, CalcularFactoresSerializer
 from .pagination import CustomPageNumberPagination
 
 # Create your views here.
+class CalculoFactoresAPIView(APIView):
+    def post(self, req):
+        serializer = CalcularFactoresSerializer(data=req.data)
+
+        if serializer.is_valid():
+            resultado = serializer.calcular_factores()
+            return Response(resultado['factores'], status=status.HTTP_200_OK)
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
 class CalificacionViewSet(ModelViewSet):
     queryset = Calificacion.objects.all().order_by('id')
     serializer_class = CalificacionSerializer
