@@ -37,6 +37,7 @@ pip install django==5.2.7
 pip install djangorestframework
 pip install django-cors-headers
 pip install mysqlclient
+pip install django-filter
 ```
 ### Paquetes requeridos
 Paquete | Propósito 
@@ -44,7 +45,8 @@ Paquete | Propósito
 django | Framework web
 djangorestframework | Rest API Framework
 django-cors-headers	| Soporte para Cross-origin
-mysqlclient | Adaptador para MySQL 
+mysqlclient | Adaptador para MySQL
+django-filter | Filtro de búsqueda
 
 Para más información, revisar el archivo "settings.py" del proyecto.
 
