@@ -114,14 +114,14 @@ python manage.py runserver
 ## API Endpoints
 La API de las Calificaciones se exponen a través de la clase `OrigenViewSet`, que amplía `ModelViewSet` de Django REST Framework. Esto proporciona un conjunto completo de operaciones CRUD a través de métodos HTTP RESTful en la URL base /datos/origenes/.
 
-Método HTTP | Endpoint | Acción ViewSet | Propósito
+Operación | Método HTTP | Endpoint | Propósito
 :------- | :------- | :------- | :-------
-GET | /datos/calificaciones/ | list() | Obtiene todas las calificaciones
-POST | /datos/calificaciones/ | create() | Crea una nueva calificación
-GET | /datos/calificaciones/{id}/ | retrieve() | Obtiene una calificación por ID
-PUT | /datos/calificaciones/{id}/ | update() | Actualización total de una calificación
-PATCH | /datos/calificaciones/{id}/ | partial_update() | Actualización parcial de una calificación
-DELETE | /datos/calificaciones/{id}/ | destroy() | Elimina una calificación
+Listar | GET | /datos/calificaciones/ | Obtiene todas las calificaciones
+Crear | POST | /datos/calificaciones/ | Crea una nueva calificación
+Obtener | GET | /datos/calificaciones/{id}/ | Obtiene una calificación por ID
+Actualizar | PUT | /datos/calificaciones/{id}/ | Actualización total de una calificación
+Actualización parcial | PATCH | /datos/calificaciones/{id}/ | Actualización parcial de una calificación
+Eliminar | DELETE | /datos/calificaciones/{id}/ | Elimina una calificación
 
 
 
